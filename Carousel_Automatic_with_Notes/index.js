@@ -28,6 +28,14 @@ https://www.freecodecamp.org/news/javascript-timing-events-settimeout-and-setint
 
 */
 
+
+/* 
+
+--> Here on fetch function we simple fetching tha data into our mock api then we are
+    passing into that start function for making carousel 
+
+*/
+
 let mockdata;
 function fetchdata() {
   let res = fetch(
@@ -43,6 +51,15 @@ function fetchdata() {
 
 fetchdata();
 
+
+/* 
+--> Counter for counting or reaching into all data dynamiclly 
+    if ex- i write images[0] so im only gonna stuck on images of 0th
+    postion and thats why we take counter for increasing after
+    every setInterval function we increase this counter for
+    showing next image...
+
+*/
 let counter = 0;
 let id;
 
@@ -59,10 +76,14 @@ let start = () => {
     }
     counter++;
     container.append(img);
-  }, 1500);
+  }, 2000);
 };
 
 
+/* 
+--> for stopping that setInterval function we use that
+    function and here we simple clearing and reseting..
+*/
 function stop(){
 clearInterval(id)
 }
