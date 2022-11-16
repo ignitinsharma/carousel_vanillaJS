@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel in Js</title>
-</head>
-<body>
-    <h1>Carousel</h1>
-    <div class="container"></div>
-    <div>
-        <button >Start</button>
-        <button>Stop</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel in JS</title>
+    <style>
+      * {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        text-align: center;
+      }
+      .button {
+        background-color: black; /* Green */
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+
+      #maindiv {
+        width: 60%;
+        height: 600px;
+        margin: auto;
+        padding: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+
+      #imagebox {
+        width: 600px;
+        height: 400px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="maindiv">
+      <h1>Carousel using Vanilla JavaScript 😎</h1>
+
+      <div>
+        <button class="button" onclick="start()">START</button>
+        <button class="button" onclick="stop()">STOP</button>
+      </div>
+      <br />
+      <br />
+      <div class="container">
+        <img id="imagebox" src="" alt="" />
+      </div>
     </div>
-</body>
+  </body>
 </html>
 <script src="./index.js"></script>

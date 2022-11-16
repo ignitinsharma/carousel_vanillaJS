@@ -28,11 +28,41 @@ https://www.freecodecamp.org/news/javascript-timing-events-settimeout-and-setint
 
 */
 
+let mockdata;
+function fetchdata() {
+  let res = fetch(
+    "https://fathomless-everglades-39788.herokuapp.com/api/images"
+  )
+    .then((res) => res.json())
+    .then((res) => {
+      mockdata = res;
+
+      console.log(mockdata[0].images);
+    });
+}
+
+fetchdata();
+
+let counter = 0;
+let id;
+
+let start = () => {
+  let container = document.getElementsByClassName("container");
+  let img = document.getElementById("imagebox");
+  
+  
+
+  id=setInterval(() => {
+    img.src = mockdata[counter].images;
+    if(counter==mockdata.length-1){
+        counter=0
+    }
+    counter++;
+    container.append(img);
+  }, 1500);
+};
 
 
-let images_arr=[
-    {image:'https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80'},
-    {image:"https://images.unsplash.com/photo-1619572945516-7598cb601a11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1331&q=80"},
-    {image:"https://images.unsplash.com/photo-1562911791-c7a97b729ec5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=937&q=80"},
-    
-]
+function stop(){
+clearInterval(id)
+}
