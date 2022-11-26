@@ -39,7 +39,7 @@ https://www.freecodecamp.org/news/javascript-timing-events-settimeout-and-setint
 let mockdata;
 function fetchdata() {
   let res = fetch(
-    "https://fathomless-everglades-39788.herokuapp.com/api/images"
+    "https://backend-by-nitin.onrender.com/api/images"
   )
     .then((res) => res.json())
     .then((res) => {
